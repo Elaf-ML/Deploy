@@ -32,7 +32,7 @@ const ProfilePage = () => {
   const { data: userProfile, isLoading: userProfileLoading } = useQuery({
     queryKey: ['userProfile', username],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/api/users/profile/${username}`, {
+      const res = await fetch(`https://deploy-ompa.onrender.com/api/users/profile/${username}`, {
         method: 'GET',
         credentials: 'include',
       });
@@ -67,7 +67,7 @@ const ProfilePage = () => {
 
   const handleUpdateProfile = async ({ username, currentPassword, newPassword, bio, link, coverImg , profileImg }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/users/update', {
+      const response = await fetch('https://deploy-ompa.onrender.com/api/users/update', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -99,7 +99,7 @@ const ProfilePage = () => {
 
   const handleFollow = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/users/follow/${userProfile._id}`, {
+      const response = await fetch(`https://deploy-ompa.onrender.com/api/users/follow/${userProfile._id}`, {
         method: 'POST',
         credentials: 'include',
       });
@@ -118,7 +118,7 @@ const ProfilePage = () => {
 
   const handleUnfollow = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/users/follow/${userProfile._id}`, {
+      const response = await fetch(`https://deploy-ompa.onrender.com/api/users/follow/${userProfile._id}`, {
         method: 'POST',
         credentials: 'include',
       });
@@ -137,7 +137,7 @@ const ProfilePage = () => {
 
   const handleShowBlockedAccounts = async () => {
     try {
-        const response = await fetch('http://localhost:5000/api/users/blocked', {
+        const response = await fetch('https://deploy-ompa.onrender.com/api/users/blocked', {
             method: 'GET',
             credentials: 'include',
         });
@@ -151,7 +151,7 @@ const ProfilePage = () => {
 
   const handleBlockUnblock = async (userId) => {
     try {
-        const response = await fetch(`http://localhost:5000/api/users/block/${userId}`, {
+        const response = await fetch(`https://deploy-ompa.onrender.com/api/users/block/${userId}`, {
             method: 'POST',
             credentials: 'include',
         });
