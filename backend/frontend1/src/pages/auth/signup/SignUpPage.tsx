@@ -26,7 +26,7 @@ const SignUpPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+            const response = await axios.post('https://deploy-ompa.onrender.com/api/auth/register', formData);
             console.log(response.data);
             // Handle successful signup (e.g., redirect to login page or show success message)
             setSuccessMessage("Account created successfully!");
