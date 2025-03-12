@@ -4,7 +4,7 @@
   "description": "Backend for a simplified Reddit clone using Node.js, Express, and MongoDB.",
   "main": "src/server.ts",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "tsc && node dist/server.js",
     "dev": "ts-node-dev src/server.ts",
     "build": "npm install --prefix ./frontend1 && npm run build --prefix ./frontend1 && npm install",
     "test": "jest"
