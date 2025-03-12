@@ -7,8 +7,8 @@ import cors from 'cors';
 import connectDB from './config/db';
 import cookieParser from 'cookie-parser';
 
-const app = express();
 
+const app = express();
 
 connectDB();
 
@@ -32,6 +32,8 @@ app.use((req, res, next) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/users', authMiddleware, userRoutes);
 app.use('/api/posts', authMiddleware, postRoutes);
+
+
 
 
 export default app;
