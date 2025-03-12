@@ -19,7 +19,7 @@ const Post = ({ post, onDelete }) => {
   const { mutate: deletePost, isPending } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/posts/deletePost/${post._id}`, {
+        const res = await fetch(`https://deploy-ompa.onrender.com/api/posts/deletePost/${post._id}`, {
           method: 'DELETE',
           credentials: 'include',
         });
@@ -44,7 +44,7 @@ const Post = ({ post, onDelete }) => {
   const { mutate: postComment } = useMutation({
     mutationFn: async (newComment: { content: string }) => {
       try {
-        const res = await fetch(`http://localhost:5000/api/posts/Comment/${post._id}`, {
+        const res = await fetch(`https://deploy-ompa.onrender.com/api/posts/Comment/${post._id}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const Post = ({ post, onDelete }) => {
   const { mutate: likePost } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/posts/likePost/${post._id}`, {
+        const res = await fetch(`https://deploy-ompa.onrender.com/api/posts/likePost/${post._id}`, {
           method: 'POST',
           credentials: 'include',
         });
@@ -99,7 +99,7 @@ const Post = ({ post, onDelete }) => {
   const { mutate: deleteComment } = useMutation({
     mutationFn: async ({ postId, commentId }: { postId: string, commentId: string }) => {
       try {
-        const res = await fetch(`http://localhost:5000/api/posts/DeleteComment/${postId}/${commentId}`, {
+        const res = await fetch(`https://deploy-ompa.onrender.com/api/posts/DeleteComment/${postId}/${commentId}`, {
           method: 'DELETE',
           credentials: 'include',
         });
@@ -124,7 +124,7 @@ const Post = ({ post, onDelete }) => {
   const { mutate: editComment } = useMutation({
     mutationFn: async ({ postId, commentId, content }: { postId: string, commentId: string, content: string }) => {
       try {
-        const res = await fetch(`http://localhost:5000/api/posts/UpdateComment/${postId}/${commentId}`, {
+        const res = await fetch(`https://deploy-ompa.onrender.com/api/posts/UpdateComment/${postId}/${commentId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
