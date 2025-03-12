@@ -13,7 +13,7 @@ const Sidebar = () => {
     const { mutate: logout, isPending, isError, error } = useMutation({
         mutationFn: async () => {
             try {
-                const res = await fetch("http://localhost:5000/api/auth/logout", {
+                const res = await fetch("https://deploy-ompa.onrender.com/api/auth/logout", {
                     method: "POST",
                     credentials: 'include', // Include credentials (cookies)
                 });
@@ -33,6 +33,7 @@ const Sidebar = () => {
             toast.success("Logout successful");
             queryClient.invalidateQueries(['authUser']);
             console.log("Logout successfully");
+            
         },
         onError: (error) => {
             toast.error('Error logging out. Please try again.');
