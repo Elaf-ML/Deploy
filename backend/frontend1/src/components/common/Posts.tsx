@@ -14,7 +14,7 @@ const Posts: React.FC<PostsProps> = ({ feedType }) => {
         queryKey: ["posts"],
         queryFn: async () => {
             try {
-                const res = await fetch("http://localhost:5000/api/posts/getPosts", {
+                const res = await fetch("https://deploy-ompa.onrender.com/api/posts/getPosts", {
                     credentials: 'include',
                 });
 
@@ -37,7 +37,7 @@ const Posts: React.FC<PostsProps> = ({ feedType }) => {
     const { data: authUser, isLoading: authUserLoading } = useQuery({
         queryKey: ["authUser"],
         queryFn: async () => {
-            const res = await fetch("http://localhost:5000/api/users/authUser", {
+            const res = await fetch("https://deploy-ompa.onrender.com/api/users/authUser", {
                 credentials: 'include',
             });
             const data = await res.json();
