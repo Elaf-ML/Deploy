@@ -20,7 +20,7 @@ const CreatePost = () => {
 
 			try{
 
-				const res = await fetch('http://localhost:5000/api/posts/createPost', {
+				const res = await fetch('https://deploy-ompa.onrender.com/api/posts/createPost', {
 					method: 'POST',
 					credentials : 'include',
 					headers: {
