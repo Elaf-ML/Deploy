@@ -20,9 +20,9 @@ const LikedPosts = ({ feedType }) => {
     let url = '';
 
     if (feedType === 'likes') {
-      url = 'http://localhost:5000/api/posts/likedPosts';
+      url = 'https://deploy-ompa.onrender.com/api/posts/likedPosts';
     } else if (feedType === 'authUserPosts') {
-      url = 'http://localhost:5000/api/posts/myPosts';
+      url = 'https://deploy-ompa.onrender.com/api/posts/myPosts';
     }
 
     try {
@@ -54,7 +54,7 @@ const LikedPosts = ({ feedType }) => {
   const handleLikePost = async (postId: string) => {
     const token = Cookies.get('token');
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/likePost/${postId}`, {
+      const response = await fetch(`https://deploy-ompa.onrender.com/api/posts/likePost/${postId}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
